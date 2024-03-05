@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "123e1e82-eef8-4c97-9b65-8d4db7d402d4",
+		"name": "Tutorials API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15118772"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Gonzalo",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Melo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "gonzalomelov@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "gonzalomelov@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutorials",
+			"item": [
+				{
+					"name": "Get Tutorials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials?orderById=DESC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "melo 1",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Hola",
+									"disabled": true
+								},
+								{
+									"key": "orderById",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Create-Tutorial-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTY5NjkzMDYsImV4cCI6MTY1Njk2OTYwNn0.L3tyaE0Sraf4PQ37QV19tFjTVH5X7tEb__A5lSTsjk8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Tutorial title melo 1",
+									"type": "text"
+								},
+								{
+									"key": "videoUrl",
+									"value": "https://tutorial.com/video1.mp4",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Tutorial long description melo 1",
+									"type": "text"
+								},
+								{
+									"key": "publishedStatus",
+									"value": "reviewed",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tutorial Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Tutorial title 1",
+									"type": "text"
+								},
+								{
+									"key": "videoUrl",
+									"value": "https://tutorial.com/video1.mp4",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Tutorial long description 1",
+									"type": "text"
+								},
+								{
+									"key": "publishedStatus",
+									"value": "published",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials/mass_delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials",
+								"mass_delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNy0wNFQyMDo1NDo0MC4wMDBaIiwiaWF0IjoxNjU2OTY4MjIyLCJleHAiOjE2NTY5NzE4MjJ9.j_PXe3JJ9GkpnkA1aowQMDSLdkEERjrcAyw-qmPAg5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/tutorials/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tutorials",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

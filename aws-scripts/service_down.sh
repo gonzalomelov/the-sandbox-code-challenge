@@ -1,0 +1,1 @@
+ecs-cli compose --project-name tutorial  --file docker-compose-aws.yml --debug service down --region us-west-2 --ecs-profile tutorial --cluster-config tutorial
